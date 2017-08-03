@@ -211,7 +211,7 @@ class AcsClient:
         ret = body
 
         try:
-            body_obj = json.loads(body)
+            body_obj = json.loads(body.decode())
             request_id = body_obj.get('RequestId')
             ret = body_obj
         except ValueError:
